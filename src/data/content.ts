@@ -138,15 +138,15 @@ const productFor: Record<Pillar, string[]> = {
 const ctas = ["Pedí en la tienda (link en bio)", "Escribí 'CALDO' por DM", "Guardalo y compartilo", "Comprá desde el link de la story", "Comentá 'QUIERO' y te paso el link"];
 
 export const contentPlan: ContentPiece[] = Array.from({ length: 90 }, (_, i) => {
-  const [pillar, title, hook] = ideas[(i * 7) % ideas.length];
+  const [pillar, title, hook] = ideas[(i * 7) % ideas.length]!;
   return {
     id: i + 1,
     day: Math.floor(i / 3) + 1,
-    channel: channelCycle[i % channelCycle.length],
+    channel: channelCycle[i % channelCycle.length]!,
     pillar,
     title,
     hook,
-    cta: ctas[i % ctas.length],
-    product: productFor[pillar][i % 3],
+    cta: ctas[i % ctas.length]!,
+    product: productFor[pillar][i % 3]!,
   };
 });
