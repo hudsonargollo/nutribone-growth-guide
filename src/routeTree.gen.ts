@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdsRouteImport } from './routes/ads'
+import { Route as CalculadoraRouteImport } from './routes/calculadora'
+import { Route as CatalogRouteImport } from './routes/catalog'
+import { Route as ContenidoRouteImport } from './routes/contenido'
+import { Route as GeneradorRouteImport } from './routes/generador'
+import { Route as HighlightsRouteImport } from './routes/highlights'
+import { Route as WhatsappRouteImport } from './routes/whatsapp'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdsRoute = AdsRouteImport.update({
+  id: '/ads',
+  path: '/ads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculadoraRoute = CalculadoraRouteImport.update({
+  id: '/calculadora',
+  path: '/calculadora',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CatalogRoute = CatalogRouteImport.update({
+  id: '/catalog',
+  path: '/catalog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContenidoRoute = ContenidoRouteImport.update({
+  id: '/contenido',
+  path: '/contenido',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GeneradorRoute = GeneradorRouteImport.update({
+  id: '/generador',
+  path: '/generador',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HighlightsRoute = HighlightsRouteImport.update({
+  id: '/highlights',
+  path: '/highlights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhatsappRoute = WhatsappRouteImport.update({
+  id: '/whatsapp',
+  path: '/whatsapp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ads': typeof AdsRoute
+  '/calculadora': typeof CalculadoraRoute
+  '/catalog': typeof CatalogRoute
+  '/contenido': typeof ContenidoRoute
+  '/generador': typeof GeneradorRoute
+  '/highlights': typeof HighlightsRoute
+  '/whatsapp': typeof WhatsappRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ads': typeof AdsRoute
+  '/calculadora': typeof CalculadoraRoute
+  '/catalog': typeof CatalogRoute
+  '/contenido': typeof ContenidoRoute
+  '/generador': typeof GeneradorRoute
+  '/highlights': typeof HighlightsRoute
+  '/whatsapp': typeof WhatsappRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ads': typeof AdsRoute
+  '/calculadora': typeof CalculadoraRoute
+  '/catalog': typeof CatalogRoute
+  '/contenido': typeof ContenidoRoute
+  '/generador': typeof GeneradorRoute
+  '/highlights': typeof HighlightsRoute
+  '/whatsapp': typeof WhatsappRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ads'
+    | '/calculadora'
+    | '/catalog'
+    | '/contenido'
+    | '/generador'
+    | '/highlights'
+    | '/whatsapp'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/ads'
+    | '/calculadora'
+    | '/catalog'
+    | '/contenido'
+    | '/generador'
+    | '/highlights'
+    | '/whatsapp'
+  id:
+    | '__root__'
+    | '/'
+    | '/ads'
+    | '/calculadora'
+    | '/catalog'
+    | '/contenido'
+    | '/generador'
+    | '/highlights'
+    | '/whatsapp'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdsRoute: typeof AdsRoute
+  CalculadoraRoute: typeof CalculadoraRoute
+  CatalogRoute: typeof CatalogRoute
+  ContenidoRoute: typeof ContenidoRoute
+  GeneradorRoute: typeof GeneradorRoute
+  HighlightsRoute: typeof HighlightsRoute
+  WhatsappRoute: typeof WhatsappRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ads': {
+      id: '/ads'
+      path: '/ads'
+      fullPath: '/ads'
+      preLoaderRoute: typeof AdsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculadora': {
+      id: '/calculadora'
+      path: '/calculadora'
+      fullPath: '/calculadora'
+      preLoaderRoute: typeof CalculadoraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/catalog': {
+      id: '/catalog'
+      path: '/catalog'
+      fullPath: '/catalog'
+      preLoaderRoute: typeof CatalogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contenido': {
+      id: '/contenido'
+      path: '/contenido'
+      fullPath: '/contenido'
+      preLoaderRoute: typeof ContenidoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/generador': {
+      id: '/generador'
+      path: '/generador'
+      fullPath: '/generador'
+      preLoaderRoute: typeof GeneradorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/highlights': {
+      id: '/highlights'
+      path: '/highlights'
+      fullPath: '/highlights'
+      preLoaderRoute: typeof HighlightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/whatsapp': {
+      id: '/whatsapp'
+      path: '/whatsapp'
+      fullPath: '/whatsapp'
+      preLoaderRoute: typeof WhatsappRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdsRoute: AdsRoute,
+  CalculadoraRoute: CalculadoraRoute,
+  CatalogRoute: CatalogRoute,
+  ContenidoRoute: ContenidoRoute,
+  GeneradorRoute: GeneradorRoute,
+  HighlightsRoute: HighlightsRoute,
+  WhatsappRoute: WhatsappRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
